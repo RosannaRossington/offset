@@ -44,3 +44,20 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+
+//how much water does a silk dress use
+//how much water does a cotton dress
+It takes on average 10,000 litres of water to cultivate just one kilogram of raw cotton4, the material used in a third of textiles produced globally (and which represents 90 per cent of all natural fibres used).
+
+3250 liters – How much water it takes to produce the cotton needed for one t-shirt – that is almost three years’ worth of drinking water. (WWF).
+
+8183 liters – The gallons of water to grow enough cotton to produce just one pair jeans. (Tree Hugger).
+
+113 billion liters –The water required for one year’s worth of global textile production (including cotton farming). (Elle MacArthur Foundation).
+
+5.9 trillion liters – The amount of water used each year for fabric dyeing alone. (World Resources Institute).
+
+Somebody take a url - enters - spit back how much per kg - spit back based on product
