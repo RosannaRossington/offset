@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fancy_Uploading" transform="translate(-729.000000, -327.000000)" stroke="#FFFFFF" stroke-width="2">
+            <g id="Group-4" transform="translate(677.000000, 329.000000)">
+                <g id="Group-3" transform="translate(0.500000, 0.000000)">
+                    <g id="Group" transform="translate(53.000000, 0.000000)">
+                        <line x1="11" y1="0.535095215" x2="11" y2="14.5350952" id="Path-3"></line>
+                        <polyline id="Path-2" points="7 4.69904259 11.0289307 0 14.934021 4.6990428"></polyline>
+                        <polyline id="Path-4" points="0 9.58650406 0 9.53509522 1.33409679e-15 21.5350952 21.9999998 21.5350952 22 9.53509521"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

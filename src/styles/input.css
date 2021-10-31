@@ -1,0 +1,29 @@
+.input {
+    color: black;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-family: TheOutnetWebXL, Arial;
+    margin-top: 16px;
+    padding: 8px 40px 8px 12px;
+    height: calc(6 * var(--vertical-unit));
+    background-color: var(--primary-white);
+    border: 1px solid #E9E9E9;
+    width: 100%;
+}
+
+.input:focus {
+    outline: none;
+    border: 1px solid var(--primary-black);
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    box-shadow: 0 0 0px 1000px white inset;
+}
+
+::placeholder { 
+    color: #E9E9E9;
+    opacity: 1;
+  }
+  

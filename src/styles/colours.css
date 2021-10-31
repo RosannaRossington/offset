@@ -1,0 +1,29 @@
+:root {
+    /* Primary*/
+    --primary-black: #000000;
+    --primary-white: #ffffff;
+    --primary-grey: #777777;
+   	--primary-green: #4ccd7a;
+
+    /* Secondary */
+
+    --secondary-red: #b90000;
+    --secondary-grey: #e6e6e6;
+    --secondary-grey-metal: #b7b7b7;
+    --secondary-grey-sky: #f2f2f2;
+    --secondary-grey-steel: #d3d3d3;
+    --secondary-grey-light: #fafafa;
+
+    /* Tertiary */
+    --tertiary-dark-green: #1a6450;
+    --tertiary-light-red: #f6dede;
+    --tertiary-mid-red: #711d28;
+    --tertiary-dark-red: #b60217;
+
+    --urban-bronze: #56514B;
+    --woven-wicker: #B99873;
+    --evergreen-fog: #95978a;
+    --offset-green: #649b11;
+    --accessible-beige: #D1C7B7;
+
+}
