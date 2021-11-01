@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './App.scss';
-import Notification from './components/Notification/Notification'
+import Notification from './components/Notifcation/Notification';
 
 const App = () => {
   const productUrlRef = useRef(null);
@@ -11,7 +11,7 @@ const App = () => {
     product: '',
     materials: '',
     location: '',
-    madeIn: ''
+    madeIn: '',
   });
   const [productUrlError, setProductUrlError] = useState(false);
 
@@ -25,7 +25,7 @@ const App = () => {
     if (e?.target.value.includes('theoutnet.com')) {
       const productNumbers = e?.target.value.match(/\d/g).join('');
       setProductId(productNumbers);
-      handleProduct(productId);
+      console.log(productId, 'product Id');
       setProductUrlError(false);
     } else {
       setProductUrlError(true);
@@ -33,8 +33,15 @@ const App = () => {
   };
 
   const handleProduct = (productId) => {
+    // fetchProductDetails()
+    //   .then((productDetails)=> {
+    //     return fetchMaterials(productDetails.materials)
+    //   })
+    // const productDetails = await fetchProductDetails(productId)
+    // const materials = await fetchMaterials(productDetails.materials)
+    // fetchProductsAndMaterials(productId)
     //AJAX request URL -> Promise <- resolved Response object
-    fetch(
+    return fetch(
       `https://ecomm.ynap.biz/yoox/ton/search/resources/store/theoutnet_GB/productview/${productId}`,
       {
         method: 'GET',
@@ -45,6 +52,7 @@ const App = () => {
     )
       .then((response) => response.json())
       .then((data) => {
+        console.log(data, 'data');
         const { designerName, name } = data?.products[0];
         const materialsAttribute = data?.products[0].attributes?.find(
           (attribute) => {
@@ -56,15 +64,24 @@ const App = () => {
           designer: designerName,
           product: name,
           materials: materialsAttribute?.values[0].label,
-          madeIn: ''
+          madeIn: '',
         };
         setProductDetails(productDetails);
+        console.log(productDetails, 'productDetails');
+
+        // return Promise.all([
+        //   fetch(getMaterialInfo(productDetails)).then((response) => response.json()),
+        //   fetch(getMaterialInfo2(productDetails)).then((response) => response.json())
+        // ])
+      })
+      .then((result) => {
+        //do soemthing with material
       })
       .catch((error) => {
         console.log('Error:', error);
       });
   };
-  // , [productId]}
+
   return (
     <div className='background'>
       <div className='background-blur' />
@@ -86,31 +103,36 @@ const App = () => {
             </div>
 
             <div className='bodyText'>
-              <label htmlFor='productUrl'>
-                Enter the product you want to discover
-              </label>
-              <br />
-              <input
-                ref={productUrlRef}
-                type='text'
-                placeholder='Enter Product Url'
-                // value={productUrl}
-                id='productUrl'
-                onChange={handleUrl}
-              />
-              {productUrlError && (
-                <Notification mesages={'Please enter a product from The Outnet.'}/>
-              )}
-            </div>
-
-            {/* {productId &&
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleProduct(productId);
+                }}>
+                <label htmlFor='productUrl'>
+                  Enter the product you want to discover
+                </label>
+                <br />
+                <input
+                  ref={productUrlRef}
+                  type='text'
+                  placeholder='Enter Product Url'
+                  // value={productUrl}
+                  id='productUrl'
+                  onChange={handleUrl}
+                />
+                {productUrlError && (
+                  <Notification
+                    messages={'Please enter a product from The Outnet.'}
+                  />
+                )}
+                {/* {productId &&
               !!productUrlError( */}
-            <button
-              className={`button discoverButton`}
-              onClick={handleProduct(productId)}>
-              Discover
-            </button>
-            {/* )} */}
+                <button className={`button discoverButton`} type='submit'>
+                  Discover
+                </button>
+                {/* )} */}
+              </form>
+            </div>
           </>
         </div>
         <div className='right-overlay'>

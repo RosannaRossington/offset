@@ -121,7 +121,9 @@ html, body {
     letter-spacing: 0px;
     line-height: 1.2;
     margin: 16px 0;
+  }
 
+  form {
     & > input {
       margin-top: 16px;
       width: 100%;
@@ -129,7 +131,8 @@ html, body {
   }
 
   .discoverButton {
-    margin: 0 0 24px 0;
+    margin: 16px 0 24px 0;
+    width: 100%;
     border: 1px solid var(--woven-wicker);
     background-color: var(--accessible-beige);
     color: var(--primary-black);

@@ -1,10 +1,10 @@
 import React from 'react';
 import './Notification.scss';
 
-const Notification = (messages) => {
+const Notification = ({messages}) => {
     return (
         <div className="notificationContainer">
-            <p className="notificationText"></p>
+            <p className="notificationText">{messages}</p>
         </div>
     )
 }
