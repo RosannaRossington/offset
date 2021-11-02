@@ -148,8 +148,6 @@ html, body {
     }
   }
 
-
-  
   /* product discovery */
   .right-overlay {
     flex: 40%;
@@ -164,6 +162,9 @@ html, body {
     margin: 0 auto;
 }
 
+.impact {
+  color:var(--primary-white);
+}
 
 .screensizeWarning {
   display: none;

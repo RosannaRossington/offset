@@ -1,0 +1,146 @@
+2021-11-01 16:38:11.112 GMT [82194] LOG:  starting PostgreSQL 14.0 on x86_64-apple-darwin20.6.0, compiled by Apple clang version 13.0.0 (clang-1300.0.29.3), 64-bit
+2021-11-01 16:38:11.113 GMT [82194] LOG:  could not bind IPv6 address "::1": Address already in use
+2021-11-01 16:38:11.113 GMT [82194] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2021-11-01 16:38:11.113 GMT [82194] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2021-11-01 16:38:11.113 GMT [82194] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2021-11-01 16:38:11.113 GMT [82194] WARNING:  could not create listen socket for "localhost"
+2021-11-01 16:38:11.113 GMT [82194] FATAL:  could not create any TCP/IP sockets
+2021-11-01 16:38:11.114 GMT [82194] LOG:  database system is shut down
+2021-11-01 16:41:05.194 GMT [82543] LOG:  starting PostgreSQL 14.0 on x86_64-apple-darwin20.6.0, compiled by Apple clang version 13.0.0 (clang-1300.0.29.3), 64-bit
+2021-11-01 16:41:05.195 GMT [82543] LOG:  listening on IPv6 address "::1", port 5432
+2021-11-01 16:41:05.195 GMT [82543] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-11-01 16:41:05.196 GMT [82543] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-11-01 16:41:05.207 GMT [82544] LOG:  database system was shut down at 2021-11-01 16:26:17 GMT
+2021-11-01 16:41:05.225 GMT [82543] LOG:  database system is ready to accept connections
+2021-11-01 21:54:59.186 GMT [29656] ERROR:  syntax error at or near "[" at character 15
+2021-11-01 21:54:59.186 GMT [29656] STATEMENT:  DROP DATABASE [ IF EXISTS ] materials
+	DROP DATABASE [ IF EXISTS ] materials;
+2021-11-02 16:19:00.500 GMT [29705] ERROR:  type "number" does not exist at character 30
+2021-11-02 16:19:00.500 GMT [29705] STATEMENT:  CREATE TABLE materials (
+	 id number PRIMARY KEY,
+	material_name text UNIQUE,
+	country text NOT NULL,
+	water_consumption text,
+	fossil_fuel text,
+	global_warming text,
+	resource_use text,
+	hides_processed text );
+2021-11-02 16:19:42.376 GMT [29705] ERROR:  type "ciel" does not exist at character 30
+2021-11-02 16:19:42.376 GMT [29705] STATEMENT:  CREATE TABLE materials (
+	 id CIEL PRIMARY KEY,
+	material_name TEXT UNIQUE,
+	country TEXT NOT NULL,
+	water_consumption TEXT,
+	fossil_fuel TEXT,
+	global_warming TEXT,
+	resource_use TEXT,
+	hides_processed TEXT );
+2021-11-02 16:21:03.631 GMT [29705] ERROR:  type "text " does not exist at character 198
+2021-11-02 16:21:03.631 GMT [29705] STATEMENT:  CREATE TABLE materials (
+	 id SERIAL PRIMARY KEY,
+	material_name TEXT UNIQUE,
+	country TEXT NOT NULL,
+	water_consumption TEXT,
+	fossil_fuel TEXT,
+	global_warming TEXT,
+	resource_use TEXT,
+	hides_processed TEXT );
+2021-11-02 16:21:20.841 GMT [29705] ERROR:  syntax error at or near ")" at character 204
+2021-11-02 16:21:20.841 GMT [29705] STATEMENT:  CREATE TABLE materials (
+	 id SERIAL PRIMARY KEY,
+	material_name TEXT UNIQUE,
+	country TEXT NOT NULL,
+	water_consumption TEXT,
+	fossil_fuel TEXT,
+	global_warming TEXT,
+	resource_use TEXT,
+	hides_processed TEXT, );
+2021-11-02 16:21:56.507 GMT [29705] ERROR:  type "number" does not exist at character 27
+2021-11-02 16:21:56.507 GMT [29705] STATEMENT:  CREATE TABLE product (
+	id number PRIMARY KEY,
+	Name text,
+	Designer text,
+	Material text references material_name);
+2021-11-02 16:22:22.805 GMT [29705] ERROR:  type "number" does not exist at character 27
+2021-11-02 16:22:22.805 GMT [29705] STATEMENT:  CREATE TABLE product (
+	id NUMBER PRIMARY KEY,
+	Name TEXT,
+	Designer TEXT,
+	Material TEXT REFERENCES material_name);
+2021-11-02 16:22:37.571 GMT [29705] ERROR:  relation "material_name" does not exist
+2021-11-02 16:22:37.571 GMT [29705] STATEMENT:  CREATE TABLE product (
+	id SERIAL PRIMARY KEY,
+	Name TEXT,
+	Designer TEXT,
+	Material TEXT REFERENCES material_name);
+2021-11-02 17:07:52.151 GMT [29705] ERROR:  syntax error at or near "show" at character 13
+2021-11-02 17:07:52.151 GMT [29705] STATEMENT:  show tables
+	show tables;
+2021-11-02 17:08:03.598 GMT [29705] ERROR:  unrecognized configuration parameter "tables"
+2021-11-02 17:08:03.598 GMT [29705] STATEMENT:  SHOW TABLES;
+2021-11-02 17:10:47.804 GMT [29705] ERROR:  syntax error at or near "TABLE" at character 8
+2021-11-02 17:10:47.804 GMT [29705] STATEMENT:  SELECT TABLE materials
+	SELECT * FROM materials;
+2021-11-02 17:14:45.920 GMT [29705] ERROR:  syntax error at or near "trillion" at character 157
+2021-11-02 17:14:45.920 GMT [29705] STATEMENT:  INSERT INTO materials (id, material_name,country, water_consumption,fossil_fuel, global_warming,resource_use,hides_processed) VALUES (1, cotton, India, 4.5 trillion litres, 28.4 billion mega joules, 4.6million tonnes co2eq, NULL, NULL);
+2021-11-02 17:15:28.655 GMT [29705] ERROR:  syntax error at or near "_trillion_litres" at character 156
+2021-11-02 17:15:28.655 GMT [29705] STATEMENT:  INSERT INTO materials (id, material_name,country, water_consumption,fossil_fuel, global_warming,resource_use,hides_processed) VALUES (1, cotton, India, 4.5_trillion_litres, 28.4_billion_mega_joules, 4.6_million_tonnes_co2eq, NULL, NULL);
+2021-11-02 17:16:10.604 GMT [29705] ERROR:  syntax error at or near "TrillionLitres" at character 156
+2021-11-02 17:16:10.604 GMT [29705] STATEMENT:  INSERT INTO materials (id, material_name,country, water_consumption,fossil_fuel, global_warming,resource_use,hides_processed) VALUES (1, cotton, India, 4.5TrillionLitres, 28.4BillionMegaJoules, 4.6MillionTonnesCo2eq, NULL, NULL);
+2021-11-02 17:16:32.680 GMT [29705] ERROR:  syntax error at or near "TrillionLitres" at character 154
+2021-11-02 17:16:32.680 GMT [29705] STATEMENT:  INSERT INTO materials (id, material_name,country, water_consumption,fossil_fuel, global_warming,resource_use,hides_processed) VALUES (1, cotton, India, 5TrillionLitres, 28.4BillionMegaJoules, 4.6MillionTonnesCo2eq, NULL, NULL);
+2021-11-02 17:18:46.223 GMT [29705] ERROR:  syntax error at or near "NSERT" at character 1
+2021-11-02 17:18:46.223 GMT [29705] STATEMENT:  NSERT INTO materials (id, material_name,country, water_consumption,fossil_fuel, global_warming,resource_use,hides_processed) VALUES (1, cotton, India, fourAndHalfTrillionLitres, Twenty_Eight_BillionMegaJoules, 4.6MillionTonnesCo2eq, NULL, NULL);
+2021-11-02 17:18:50.810 GMT [29705] ERROR:  syntax error at or near "MillionTonnesCo2eq" at character 215
+2021-11-02 17:18:50.810 GMT [29705] STATEMENT:  INSERT INTO materials (id, material_name,country, water_consumption,fossil_fuel, global_warming,resource_use,hides_processed) VALUES (1, cotton, India, fourAndHalfTrillionLitres, Twenty_Eight_BillionMegaJoules, 4.6MillionTonnesCo2eq, NULL, NULL);
+2021-11-02 17:19:13.867 GMT [29705] ERROR:  syntax error at or near "NSERT" at character 1
+2021-11-02 17:19:13.867 GMT [29705] STATEMENT:  NSERT INTO materials (id, material_name,country, water_consumption,fossil_fuel, global_warming,resource_use,hides_processed) VALUES (1, cotton, India, fourAndHalfTrillionLitres, Twenty_Eight_BillionMegaJoules, FourPointSixMillionTonnesCo2eq, NULL, NULL);
+2021-11-02 17:19:17.314 GMT [29705] ERROR:  column "cotton" does not exist at character 138
+2021-11-02 17:19:17.314 GMT [29705] STATEMENT:  INSERT INTO materials (id, material_name,country, water_consumption,fossil_fuel, global_warming,resource_use,hides_processed) VALUES (1, cotton, India, fourAndHalfTrillionLitres, Twenty_Eight_BillionMegaJoules, FourPointSixMillionTonnesCo2eq, NULL, NULL);
+2021-11-02 17:20:53.792 GMT [29705] ERROR:  column "cotton" does not exist at character 138
+2021-11-02 17:20:53.792 GMT [29705] STATEMENT:  INSERT INTO materials (id, material_name,country, water_consumption,fossil_fuel, global_warming,resource_use,hides_processed)
+	VALUES (1, cotton, India, fourAndHalfTrillionLitres, Twenty_Eight_BillionMegaJoules, FourPointSixMillionTonnesCo2eq, NULL, NULL);
+2021-11-02 17:24:47.432 GMT [29705] ERROR:  column "cotton" does not exist at character 138
+2021-11-02 17:24:47.432 GMT [29705] STATEMENT:  INSERT INTO materials (id, material_name,country, water_consumption,fossil_fuel, global_warming,resource_use,hides_processed)
+	VALUES (1, cotton, India, fourAndHalfTrillionLitres, Twenty_Eight_BillionMegaJoules, FourPointSixMillionTonnesCo2eq, NULL, NULL);
+2021-11-02 17:26:19.720 GMT [29705] ERROR:  syntax error at or near "VALUE" at character 38
+2021-11-02 17:26:19.720 GMT [29705] STATEMENT:  INSERT INTO materials(material_name) VALUE(cotton);
+2021-11-02 17:26:27.420 GMT [29705] ERROR:  column "cotton" does not exist at character 46
+2021-11-02 17:26:27.420 GMT [29705] STATEMENT:  INSERT INTO materials(material_name) VALUES (cotton);
+2021-11-02 17:26:49.713 GMT [29705] ERROR:  column "india" does not exist at character 40
+2021-11-02 17:26:49.713 GMT [29705] STATEMENT:  INSERT INTO materials(country) VALUES (India);
+2021-11-02 17:32:03.422 GMT [29705] ERROR:  syntax error at or near "1" at character 26
+2021-11-02 17:32:03.422 GMT [29705] STATEMENT:  INSERT INTO “materials” (1, cotton, India, fourAndHalfTrillionLitres, Twenty_Eight_BillionMegaJoules, FourPointSixMillionTonnesCo2eq, NULL, NULL)  VALUES (id, material_name, country, water_consumption,fossil_fuel, global_warming,resource_use,hides_processed);
+2021-11-02 17:34:08.024 GMT [29705] ERROR:  relation "“materials”" does not exist at character 13
+2021-11-02 17:34:08.024 GMT [29705] STATEMENT:  INSERT INTO “materials”  VALUES (1, cotton, India, fourAndHalfTrillionLitres, Twenty_Eight_BillionMegaJoules, FourPointSixMillionTonnesCo2eq, NULL, NULL);
+2021-11-02 17:34:27.586 GMT [29705] ERROR:  column "cotton" does not exist at character 35
+2021-11-02 17:34:27.586 GMT [29705] STATEMENT:  INSERT INTO materials  VALUES (1, cotton, India, fourAndHalfTrillionLitres, Twenty_Eight_BillionMegaJoules, FourPointSixMillionTonnesCo2eq, NULL, NULL);
+2021-11-02 17:37:22.228 GMT [29705] ERROR:  syntax error at or near "INSERT" at character 126
+2021-11-02 17:37:22.228 GMT [29705] STATEMENT:  INSERT INTO “materials” (id,material_name,country,water_consumption,fossil_fuel,global_warming,resource_use,hides_processed) INSERT INTO materials  VALUES (1, cotton, India, fourAndHalfTrillionLitres, Twenty_Eight_BillionMegaJoules, FourPointSixMillionTonnesCo2eq, NULL, NULL);
+2021-11-02 17:37:43.965 GMT [29705] ERROR:  relation "“materials”" does not exist at character 13
+2021-11-02 17:37:43.965 GMT [29705] STATEMENT:  INSERT INTO “materials” (id,material_name,country,water_consumption,fossil_fuel,global_warming,resource_use,hides_processed) VALUES (1, cotton, India, fourAndHalfTrillionLitres, Twenty_Eight_BillionMegaJoules, FourPointSixMillionTonnesCo2eq, NULL, NULL);
+2021-11-02 17:37:57.467 GMT [29705] ERROR:  column "cotton" does not exist at character 135
+2021-11-02 17:37:57.467 GMT [29705] STATEMENT:  INSERT INTO materials (id,material_name,country,water_consumption,fossil_fuel,global_warming,resource_use,hides_processed) VALUES (1, cotton, India, fourAndHalfTrillionLitres, Twenty_Eight_BillionMegaJoules, FourPointSixMillionTonnesCo2eq, NULL, NULL);
+2021-11-02 17:39:35.576 GMT [29705] ERROR:  null value in column "country" of relation "materials" violates not-null constraint
+2021-11-02 17:39:35.576 GMT [29705] DETAIL:  Failing row contains (1, cotton, null, null, null, null, null, null).
+2021-11-02 17:39:35.576 GMT [29705] STATEMENT:  INSERT INTO materials (material_name) VALUES('cotton');
+2021-11-02 17:40:26.357 GMT [29705] ERROR:  syntax error at or near ".5" at character 156
+2021-11-02 17:40:26.357 GMT [29705] STATEMENT:  INSERT INTO materials (id,material_name,country,water_consumption,fossil_fuel,global_warming,resource_use,hides_processed) VALUES (1, ‘cotton’, ‘India’, ‘4.5 TrillionLitres’, ’28 BillionMegaJoules’, ‘4.6MillionTonnesCo2eq’, NULL, NULL);
+2021-11-02 17:40:44.706 GMT [29705] ERROR:  column "‘cotton’" does not exist at character 135
+2021-11-02 17:40:44.706 GMT [29705] STATEMENT:  INSERT INTO materials (id,material_name,country,water_consumption,fossil_fuel,global_warming,resource_use,hides_processed) VALUES (1, ‘cotton’, ‘India’, ‘fourAndHalfTrillionLitres’, ‘Twenty_Eight_BillionMegaJoules’, FourPointSixMillionTonnesCo2eq’, NULL, NULL);
+2021-11-02 17:41:29.421 GMT [29705] ERROR:  column "‘india’" does not exist at character 135
+2021-11-02 17:41:29.421 GMT [29705] STATEMENT:  INSERT INTO materials (id,material_name,country,water_consumption,fossil_fuel,global_warming,resource_use,hides_processed) VALUES (1, ‘India’, ‘fourAndHalfTrillionLitres’, ‘Twenty_Eight_BillionMegaJoules’, FourPointSixMillionTonnesCo2eq’, NULL, NULL);
+2021-11-02 17:42:54.296 GMT [29705] ERROR:  relation "“materials”" does not exist at character 13
+2021-11-02 17:42:54.296 GMT [29705] STATEMENT:  INSERT INTO “materials” (id,material_name,country,water_consumption,fossil_fuel,global_warming,resource_use,hides_processed) VALUES (1, ‘cotton’, ‘India’, ‘fourAndHalfTrillionLitres’, ‘Twenty_Eight_BillionMegaJoules’, FourPointSixMillionTonnesCo2eq’, NULL, NULL);
+2021-11-02 17:43:52.260 GMT [29705] ERROR:  relation "public.“materials”" does not exist at character 13
+2021-11-02 17:43:52.260 GMT [29705] STATEMENT:  INSERT INTO Public.“materials” (id,”material_name”,”country”,”water_consumption”,”fossil_fuel”,”global_warming”,”resource_use”,”hides_processed”) VALUES (1, ‘cotton’, ‘India’, ‘fourAndHalfTrillionLitres’, ‘Twenty_Eight_BillionMegaJoules’, FourPointSixMillionTonnesCo2eq’, NULL, NULL);
+2021-11-02 17:44:25.809 GMT [29705] ERROR:  column "“id”" of relation "materials" does not exist at character 24
+2021-11-02 17:44:25.809 GMT [29705] STATEMENT:  INSERT INTO materials (“id”,”material_name”,”country”,”water_consumption”,”fossil_fuel”,”global_warming”,”resource_use”,”hides_processed”) VALUES (1, ‘cotton’, ‘India’, ‘fourAndHalfTrillionLitres’, ‘Twenty_Eight_BillionMegaJoules’, FourPointSixMillionTonnesCo2eq’, NULL, NULL);
+2021-11-02 17:44:57.490 GMT [29705] ERROR:  column "”water_consumption”" of relation "materials" does not exist at character 49
+2021-11-02 17:44:57.490 GMT [29705] STATEMENT:  INSERT INTO materials (id,material_name,country,”water_consumption”,”fossil_fuel”,”global_warming”,”resource_use”,”hides_processed”) VALUES (1, ‘cotton’, ‘India’, ‘fourAndHalfTrillionLitres’, ‘Twenty_Eight_BillionMegaJoules’, FourPointSixMillionTonnesCo2eq’, NULL, NULL);
+2021-11-02 17:45:26.546 GMT [29705] ERROR:  column "‘cotton’" does not exist at character 135
+2021-11-02 17:45:26.546 GMT [29705] STATEMENT:  INSERT INTO materials (id,material_name,country,water_consumption,fossil_fuel,global_warming,resource_use,hides_processed) VALUES (1, ‘cotton’, ‘India’, ‘fourAndHalfTrillionLitres’, ‘Twenty_Eight_BillionMegaJoules’, FourPointSixMillionTonnesCo2eq’, NULL, NULL);
+2021-11-02 17:46:57.704 GMT [29705] ERROR:  column "‘cotton’" does not exist at character 35
+2021-11-02 17:46:57.704 GMT [29705] STATEMENT:  INSERT INTO materials  VALUES (1, ‘cotton’, ‘India’, ‘fourAndHalfTrillionLitres’, ‘Twenty_Eight_BillionMegaJoules’, FourPointSixMillionTonnesCo2eq’, NULL, NULL);
+2021-11-02 17:52:08.409 GMT [29705] ERROR:  INSERT has more target columns than expressions at character 106
+2021-11-02 17:52:08.409 GMT [29705] STATEMENT:  INSERT INTO materials(id,material_name,country,water_consumption,fossil_fuel,global_warming,resource_use,hides_processed) VALUES(2,'leather','Argentina',NULL,NULL,'0.2millionSqMetres', '38.2MillionSqMetres');

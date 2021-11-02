@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import './App.scss';
 import Notification from './components/Notifcation/Notification';
 
@@ -19,7 +19,7 @@ const App = () => {
     productUrlRef.current.focus();
   }, []);
 
-  const handleUrl = (e) => {
+  const handleUrl = useCallback((e) => {
     //https://www.theoutnet.com/en-gb/shop/product/ulla-johnson/dresses/mini-dress/wilona-gathered-acid-wash-denim-mini-dress/27086482324528417
     e.preventDefault();
     if (e?.target.value.includes('theoutnet.com')) {
@@ -30,9 +30,10 @@ const App = () => {
     } else {
       setProductUrlError(true);
     }
-  };
+  },[productId]);
 
-  const handleProduct = (productId) => {
+  const handleProduct = useCallback((productId) => {
+    //TODO: refactor out so easier to test
     // fetchProductDetails()
     //   .then((productDetails)=> {
     //     return fetchMaterials(productDetails.materials)
@@ -56,7 +57,7 @@ const App = () => {
         const { designerName, name } = data?.products[0];
         const materialsAttribute = data?.products[0].attributes?.find(
           (attribute) => {
-            return attribute.identifier === 'Material Leather & Fur (TON_ALL)';
+            return attribute.identifier === 'Material Leather & Fur (TON_ALL)' || attribute.identifier === 'Material Fabric (TON_ALL)';
           }
         );
 
@@ -71,16 +72,16 @@ const App = () => {
 
         // return Promise.all([
         //   fetch(getMaterialInfo(productDetails)).then((response) => response.json()),
-        //   fetch(getMaterialInfo2(productDetails)).then((response) => response.json())
+        //   fetch(getMadeInfo(productDetails)).then((response) => response.json())
         // ])
       })
       .then((result) => {
-        //do soemthing with material
+        //call sql database with material
       })
       .catch((error) => {
         console.log('Error:', error);
       });
-  };
+  }, []);
 
   return (
     <div className='background'>
@@ -140,10 +141,10 @@ const App = () => {
             <div className='impact'>
               {productDetails && (
                 <>
-                  <p className='preTitle'>{productDetails.name}</p>
                   <h1 className='designer'>{productDetails.designer}</h1>
+                  <p className='preTitle'>{productDetails.product}</p>
                   <p className='materials'>{productDetails.materials}</p>
-                  {/* <p className='materials'>{productDetails.madeIn}</p> */}
+                  <p className='materials'>{productDetails.madeIn}</p>
                 </>
               )}
             </div>
