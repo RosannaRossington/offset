@@ -1,10 +1,9 @@
 import express from 'express';
-import {getMaterials, getMaterialById, createMaterial} from './queries.js';
+import {getMaterials, getMaterialById, createMaterial, getMaterialByMaterial} from './queries.js';
 
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-console.log(getMaterials, 'getMaterials')
 app.use(express.json());
 app.use(
   express.urlencoded({
@@ -18,16 +17,7 @@ app.get('/', (request, response) => {
 });
 
 app.get('/materials', getMaterials)
-// app.get('/materials', (request, response) => {
-//     console.log('getMaterials');
-//     pool.query('SELECT * FROM materials ORDER BY id ASC', (error, results) => {
-//       if (error) {
-//         throw error;
-//       }
-//       response.status(200).json(results.rows);
-//     });
-//   });
-
+app.get('/materials/:material', getMaterialByMaterial)
 app.get('/materials/:id', getMaterialById)
 app.post('/materials', createMaterial)
 
