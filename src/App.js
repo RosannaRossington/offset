@@ -47,7 +47,7 @@ const App = () => {
       {
         method: 'GET',
         headers: {
-          'x-ibm-client-Id': '705b890d-fdb9-4867-a392-331c2fb86e19',
+          'x-ibm-client-Id': '--------',
         },
       }
     )
