@@ -1,6 +1,7 @@
 ****This app can not be run without the Header token.****
 
-The Offset 
+## THE OFFSET
+
 <img width="1542" alt="TheOffset" src="https://user-images.githubusercontent.com/17074304/140280216-49713917-78da-4260-94d3-cc64ee8ad0cb.png">
 
 An app to educate customers around the environmental impact of the fashion industry. Using data from https://mci.textileexchange.org/
@@ -19,7 +20,9 @@ Somebody take a url - enters - spit back how much per kg - spit back based on pr
 
 
 TODOs
+
 Hook FE up to PSQL database
+
 Display data - inforgraphics / charts
 
 
